@@ -57,14 +57,14 @@ const Login = async (req,res) => {
         }
 
         const token = jwt.sign(
-            {userId:user._id,email:user.email,role:user.role},
+            {userId:user._id,email:user.email,role:user.role,username:user.username},
             process.env.TOKEN_SECRET,
             {expiresIn:'1h'}
         );
 
         res.cookie("token",token, {httpOnly:true});
 
-        res.status(200).json({token,message:"Login Successful"});
+        res.status(200).json({token,user,message:"Login Successful"});
     }catch(err){
         console.log("Error during login:",err);
         res.status(500).json({message:'Login failed'});

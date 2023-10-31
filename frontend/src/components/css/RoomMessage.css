@@ -1,0 +1,51 @@
+.RoomMessage{
+    width: 100%;
+    height: 100%;
+    background-color: burlywood;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.AllMessages{
+    width: 100%;
+    height: 91%;
+    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.85)),url('../assets/BackgroundMesg.jpg');
+}
+.InputMessage{
+    width: 100%;
+    height: 9%;
+    background-color:#131f26;
+    display: flex;
+}
+.InputCont{
+    width: 80%;
+    height: 100%;
+    /* background: red; */
+    display: flex;
+    justify-content: center;
+}
+.InputCont input{
+    width: 94%;
+    height: 63%;
+    margin: auto;
+    padding: 5px;
+    border-radius: 12px;
+    border: none;
+    font-family: 'Kanit', sans-serif;
+    font-size: 1rem;
+}
+.IconsCont{
+    width: 20%;
+    height: 100%;
+    /* background: blue; */
+    display: flex;
+    justify-content: center;
+}
+.IconsCont span{
+    width: 30%;
+    height: 100%;
+    /* background: #131f26; */
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}

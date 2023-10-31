@@ -1,0 +1,98 @@
+.ProfileCont{
+    width: 90%;
+    height: 86%;
+    background-color: white;
+    margin: auto;
+    display: flex;
+}
+.leftUserCont{
+    width: 30%;
+    height: 100%;
+    background: #111b21;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.userLogo{
+    width: 70%;
+    height: 45%;
+    background-color: #111b21;
+    margin: auto;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    border: 5px solid #00a884;
+}
+.leftUserCont span{
+    /* width: auto;
+    height: auto; */
+    margin: auto;
+    margin-top: -100px;
+    font-family: 'Kanit', sans-serif;
+    font-size: 1rem;
+    color: #00a884; 
+}
+
+
+
+.rightSideInfo{
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #111b21;
+    border: 2px solid #00a884;
+}
+.TitleProfile{
+    width: 70%;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+.TitleProfile h1{
+    font-family: 'Kanit', sans-serif;
+    font-size: 3rem;
+    color: #111b21;
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: #00a884;
+}
+.infoCont{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: auto;
+}
+.infoCont h2{
+    font-family: 'Kanit', sans-serif;
+    font-size: 2rem;
+    color:#00a884;
+}
+.infoCont h3{
+    font-family: 'Kanit', sans-serif;
+    font-size: 2rem;
+    color:white;
+}
+.UpdateButton{
+    width: 100%;
+    height: 7vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background: red; */
+    margin: auto;
+}
+.UpdateButton button{
+    width: 30%;
+    height: 90%;
+    border-radius: 10px;
+    border: 3px solid #00a884;
+    background-color: #111b21;
+    font-family: 'Kanit', sans-serif;
+    color: #00a884;
+    font-size: 1.4rem;
+    cursor: pointer;
+}

@@ -1,0 +1,66 @@
+.RoomsList{
+    width: 30%;
+    height: 100%;
+    background-color: #111b21;
+    display: flex;
+    flex-direction: column;
+}
+.roomContNav{
+    width: 100%;
+    height: 7vh;
+    /* background: red; */
+    display: flex;
+    justify-content: flex-end;
+}
+.inputCont{
+    width: 90%;
+    height: 100%;
+    /* background: firebrick; */
+    display: flex;
+    justify-content: center;
+}
+.inputCont input{
+    width: 90%;
+    height: 3.5vh;
+    margin: auto;
+    border-radius: 10px;
+    border: none;
+    padding: 5px;
+    font-family: 'Kanit', sans-serif;
+}
+.moreDiv{
+    width: 10%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.listRoomsCont{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+.RoomLi{
+    width: 100%;
+    height: 7vh;
+    /* background: red; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 10px;
+    cursor: pointer;
+}
+.roomName{
+    margin-left: 1rem;
+    width: auto;
+    height: auto;
+    /* margin: auto; */
+}
+.roomName h1{
+    font-family: 'Kanit', sans-serif;
+    font-size: 1.4rem;
+    margin: auto;
+    color: white;
+}

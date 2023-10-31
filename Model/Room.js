@@ -16,6 +16,12 @@ const roomSchema = new mongoose.Schema({
             ref:'User',
         },
     ],
+    message:[
+        {
+            type:mongoose.Schema.Types.ObjectId,
+            ref:'Message',
+        }
+    ]
 })
 
 const Room = mongoose.model('Room',roomSchema);

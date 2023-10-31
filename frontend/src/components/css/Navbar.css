@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@500&display=swap');
+.Navbar{
+    width: 90%;
+    height: 8vh;
+    /* background: red; */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    border-radius: 15px;
+    border: 2px solid #00a884;
+    margin: auto;
+}
+.NavbarTitle{
+    /* background-color: white; */
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin: auto; */
+}
+.NavbarTitle h1{
+    font-family: 'Kanit', sans-serif;
+    font-size: 2.3rem;
+    margin-right: auto;
+    color: #00a884;
+}
+.UserInfo{
+    width: 50%;
+    /* height: ; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: aquamarine; */
+    /* margin: auto; */
+}
+.Username{
+    width: auto;
+    /* background: black; */
+    height: 100%;
+    margin-left: auto;
+    display: flex;
+    justify-content: center;
+    /* position: relative; */
+}
+.Username h1{
+    color: white;
+    margin: auto;
+    font-size: 1.3rem;
+}
+.Userrole{
+    width: 15%;
+    /* background: white; */
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+.Userrole span{
+    width: auto;
+    height: 5vh;
+    margin: auto;
+    background: #00dfaf;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Userrole span h1{
+    color: rgb(0, 71, 9);
+    margin: auto;
+    font-size: 1.1rem;
+    text-align: center;
+}
+.settingIcon{
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: blue; */
+    /* margin: auto; */
+}
+.SettingsIcon{
+    width: 40%;
+    /* background: white; */
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.SettingList{
+    position: absolute;
+    width: 15%;
+    height: auto;
+    background-color: #111b21;
+    z-index: 100;
+    top: 9%;
+    left: 70%;
+    border-radius: 10px;
+    border: 2px solid #00a884;
+}
+.SettingList ul{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    list-style: none;
+}
+.SettingList ul li{
+    width: 100%;
+    height: 7vh;
+    /* background-color: pink; */
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+.SettingList ul li h1{
+    font-family: 'Kanit', sans-serif;
+    font-size: 1.3rem;
+    margin: auto;
+    color: white;
+}
+
+.MoreList{
+    position: absolute;
+    width: 15%;
+    height: auto;
+    background-color: #111b21;
+    z-index: 100;
+    top: 9%;
+    left: 73%;
+    border-radius: 10px;
+    border: 2px solid #00a884;
+}
+.MoreList ul{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    list-style: none;
+}
+.MoreList ul li{
+    width: 100%;
+    height: 7vh;
+    /* background-color: pink; */
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+.MoreList ul li h1{
+    font-family: 'Kanit', sans-serif;
+    font-size: 1.3rem;
+    margin: auto;
+    color: white;
+}
+
+
+
+/* Create Room Container */
+.createRoomCont{
+    width: 40%;
+    height: 55vh;
+    position: absolute;
+    background: #111b21;
+    top: 55%;
+    left: 65%;
+    transform: translate(-50%,-50%);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    border: 5px solid #00dfaf;
+}
+.CreateRoomTitle{
+    width: 100%;
+    height: 10vh;
+    /* background-color: red; */
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    display: flex;
+    justify-content: center;
+}
+.CreateRoomTitle h1{
+    font-family: 'Kanit', sans-serif;
+    font-size: 2.3rem;
+    margin: auto;
+    color: #00dfaf;
+}
+.CrSubtitle{
+    width: 100%;
+    height: 10vh;
+    /* background-color: red; */
+    /* border-top-left-radius: 15px;
+    border-top-right-radius: 15px; */
+    display: flex;
+    justify-content: center;
+}
+.CrSubtitle h3{
+    font-family: 'Kanit', sans-serif;
+    font-size: 1.5rem;
+    margin: auto;
+    color: #00a884;
+}
+.CrInput{
+    width: 100%;
+    height: 7vh;
+    /* background-color: red; */
+    /* border-top-left-radius: 15px;
+    border-top-right-radius: 15px; */
+    display: flex;
+    margin-top: 15px;
+    justify-content: center;
+}
+.CrInput input{
+    width: 90%;
+    border-radius: 10px;
+    border: none;
+    font-family: 'Kanit', sans-serif;
+    font-size: 1rem;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+}
+.CrInput input::placeholder{
+    margin: auto;
+}
+.Crbutton{
+    width: 100%;
+    height: 7vh;
+    /* background-color: red; */
+    /* border-top-left-radius: 15px;
+    border-top-right-radius: 15px; */
+    display: flex;
+    margin-top: 15px;
+    justify-content: center;
+}
+.Crbutton button{
+    width: 40%;
+    border-radius: 10px;
+    border: 2px solid #00a884;
+    font-family: 'Kanit', sans-serif;
+    font-size: 1.3rem;
+    cursor: pointer;
+    color: white;
+    background-color: #111b21;
+}

@@ -15,7 +15,33 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIO(server);
 
-app.use(cors());
+// io.on("connection",(socket) => {
+//     console.log('A user connected')
+
+//     // Handle Socket events and chat logic here
+//     socket.on("joinRoom",({username,roomname}) => {
+//         console.log(`${username} joined ${roomname}`)
+//         socket.join(roomname);
+//         socket.broadcast.to(roomname).emit("notification",{
+//             body:`${username} joined the room`,
+//             user:"admin"
+//         })
+//     })
+
+//     socket.on("chatMessage",({message,roomname,username}) => {
+//         io.to(roomname).emit("newMessage",{
+//             body:message,
+//             user:username
+//         })
+//     })
+// });
+
+// app.set('io',io);
+
+app.use(cors({
+    origin:"http://localhost:3001",
+    credentials:true,
+}));
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 app.use(cookieParser())
