@@ -15,9 +15,10 @@ import GifIcon from "@mui/icons-material/Gif";
 import AudioFileIcon from "@mui/icons-material/AudioFile";
 import PictureAsPdfIcon from "@mui/icons-material/PictureAsPdf";
 import ArticleIcon from "@mui/icons-material/Article";
-import { set } from "mongoose";
+// import { set } from "mongoose";
 import AddMember from "./AddMember";
 import { useSelector } from "react-redux";
+import RemoveMember from "./RemoveMember";
 
 function ChatRooms({ roomName }) {
   const [adminName, setAdminName] = useState("");
@@ -27,6 +28,7 @@ function ChatRooms({ roomName }) {
   const [fileAttach, setFileAttach] = useState(false);
   const [roomMore, setRoomMore] = useState(false);
   const [addMember, setAddMember] = useState(false);
+  const [removeMember, setRemoveMember] = useState(false);
 
   const user = useSelector((state) => state.user.user);
 
@@ -102,6 +104,13 @@ function ChatRooms({ roomName }) {
   }
   const closeHandleAddMember = () => {
     setAddMember(false);
+  }
+
+  const handleRemoveMember = () => {
+    setRemoveMember(!removeMember);
+  }
+  const closeHandleRemoveMember = () => {
+    setRemoveMember(false);
   }
 
   return (
@@ -284,13 +293,14 @@ function ChatRooms({ roomName }) {
           <li className="RoomMoreList" onClick={handleAddMemeber}>
             <h1>Add members</h1>
           </li>
-          <li className="RoomMoreList">
+          <li className="RoomMoreList" onClick={handleRemoveMember}>
             <h1>Remove members</h1>
           </li>
         </div>
       )}
 
       {addMember && <AddMember roomName={roomName} closeAddMember={closeHandleAddMember}/>}
+      {removeMember && <RemoveMember roomName={roomName} closeHandleRemoveMember={closeHandleRemoveMember}/>}
     </>
   );
 }

@@ -1,14 +1,24 @@
-const User = require("../Model/UserModel");
-const bcrypt = require("bcryptjs");
-const jwt = require("jsonwebtoken");
-const dotenv = require("dotenv");
+import { Request, Response } from 'express';
+import User from '../Model/UserModel';
+import bcrypt from 'bcryptjs';
+import jwt from 'jsonwebtoken';
+import dotenv from 'dotenv';
+import socketIO from 'socket.io';
+import express from 'express';
+import http from 'http';
+
+dotenv.config();
+
+const app = express();
+const server = http.createServer(app);
+// const io = socketIO(server);
 
 
 // const TOKEN = "token123"
 dotenv.config();
 
 
-const register = async (req,res) => {
+export const register = async (req:any,res:any) => {
     try{
         const {username,email,password,role} = req.body;
 
@@ -39,7 +49,7 @@ const register = async (req,res) => {
 };
 
 // Login of User
-const Login = async (req,res) => {
+export const Login = async (req:any,res:any) => {
     try{
         const {email,password}  = req.body;
 
@@ -56,9 +66,16 @@ const Login = async (req,res) => {
             return res.status(401).json({message:'Invalid credentials'});
         }
 
+        const tokenSecret = process.env.TOKEN_SECRET;
+
+        if(!tokenSecret){
+            throw new Error('TOKEN_SECRET is not defined in the environment variables');
+            
+        }
+
         const token = jwt.sign(
             {userId:user._id,email:user.email,role:user.role,username:user.username},
-            process.env.TOKEN_SECRET,
+            tokenSecret,
             {expiresIn:'1h'}
         );
 
@@ -71,7 +88,7 @@ const Login = async (req,res) => {
     }
 }
 
-const Logout = async (req,res) =>{
+export const Logout = async (req:any,res:any) =>{
     try{
         const tokenCookie = req.cookies.token;
 
@@ -93,7 +110,7 @@ const Logout = async (req,res) =>{
 }
 
 
-const listTeamMembers = async (req,res) => {
+export const listTeamMembers = async (req:any,res:any) => {
     try {
         const teamMembers = await User.find({role:"team_member"});
         res.status(200).json({teamMembers});
@@ -102,7 +119,7 @@ const listTeamMembers = async (req,res) => {
         res.status(500).json({message:'Failed to list team members'});
     }
 }
-const listAdminMember = async (req,res) => {
+export const listAdminMember = async (req:any,res:any) => {
     try {
         const adminMembers = await User.find({role:"admin"});
         res.status(200).json({adminMembers});
@@ -112,7 +129,7 @@ const listAdminMember = async (req,res) => {
     }
 }
 
-const updateRoleToAdmin = async (req,res) => {
+export const updateRoleToAdmin = async (req:any,res:any) => {
     try{
         const {username} = req.params;
         const user = await User.findOne({username});
@@ -133,7 +150,7 @@ const updateRoleToAdmin = async (req,res) => {
         res.status(500).json({ message: 'Failed to update user role' });
     }
 }
-const updateRoleToMember = async (req,res) => {
+export const updateRoleToMember = async (req:any,res:any) => {
     try{
         const {username} = req.params;
         const user = await User.findOne({username});
@@ -155,4 +172,4 @@ const updateRoleToMember = async (req,res) => {
     }
 }
 
-module.exports = {register,Login, Logout, listTeamMembers,listAdminMember, updateRoleToAdmin}
+// module.exports = {   register,Login, Logout, listTeamMembers,listAdminMember, updateRoleToAdmin}

@@ -1,0 +1,8 @@
+{
+    "execMap":{
+        "ts":"node -r ts-node/register"
+    },
+    "ext":"ts",
+    "watch":["Controller","middleware","Model","Router"],
+    "ignore":["node_modules"]
+}

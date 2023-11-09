@@ -1,7 +1,18 @@
-const mongoose = require("mongoose");
-const bcrypt = require("bcryptjs");
+// const mongoose = require("mongoose");
+// const bcrypt = require("bcryptjs");
+import mongoose, {Document, Schema} from "mongoose";
+import bcrypt from 'bcryptjs'
 
-const userSchema = new mongoose.Schema({
+export interface User extends Document {
+    username:string;
+    email:string;
+    password:string;
+    role:'admin'|'team_member';
+    token?:string;
+    socketId?:string;
+}
+
+const userSchema = new Schema<User>({
     username:{
         type:String,
         required:true,
@@ -29,17 +40,17 @@ const userSchema = new mongoose.Schema({
     }
 });
 
-userSchema.pre('save',async function (next){
+userSchema.pre('save',async function (next:(error?:Error) => void){
     try{
         const salt = await bcrypt.genSalt(10);
         const hashedPassword = await bcrypt.hash(this.password,salt);
         this.password = hashedPassword;
         next();
     }catch(error){
-        next(error);
+        next(error as Error);
     }
 })
 
-const User = mongoose.model('User',userSchema);
+const UserModel = mongoose.model<User>('User',userSchema);
 
-module.exports = User;
+export default UserModel;
